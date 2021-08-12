@@ -1,0 +1,27 @@
+<style>
+    div {
+        padding: 50px;
+        background-color: #e2e2e2;
+    }
+</style>
+
+<div>
+    <h1>Iframe</h1>
+
+    <button onclick='setCookie()'>iframe cookie</button>
+</div>
+
+<script>
+    function setCookie(){
+        let r = Math.floor(Math.random () * 100);
+
+        localStorage.setItem("iframe", r);
+
+        let iframe = localStorage.getItem("iframe");
+
+        document.cookie = `frame=${r}; SameSite=None; Secure`;
+        // document.cookie = `frame=${r};`;
+
+        alert(`cookie: ${document.cookie} --- localStorage: ${iframe}`)
+    }
+</script>
